@@ -36,7 +36,7 @@ This resource can be used freely if integrated or build upon in personal or comm
 
 ## Misc
 
-Follow *Author*: [Twitter](https://twitter.com/marioecg), [Instagram](https://www.instagram.com/marioecg/)
+Follow *@marioecg*: [Twitter](https://twitter.com/marioecg), [Instagram](https://www.instagram.com/marioecg/)
 
 Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/)
 
