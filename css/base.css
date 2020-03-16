@@ -1,0 +1,360 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 14px;
+}
+
+body {
+	margin: 0;
+	--color-text: #424242;
+	--color-bg: #190e17;
+	--color-link: #989898;
+	--color-link-hover: #fff;
+	--color-primary: #88e7c4;
+	--color-secondary: #c5517d;
+	--color-description: #3b343a;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: pragmatica-extended, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+.message {
+	background: var(--color-text);
+	color: var(--color-bg);
+	padding: 1rem;
+	text-align: center;
+}
+
+.frame {
+	padding: 3rem 5vw;
+	text-align: center;
+	position: relative;
+	z-index: 1000;
+}
+
+.frame__title {
+	font-size: 1rem;
+	margin: 0 0 1rem;
+	font-weight: normal;
+}
+
+.frame__links {
+	display: inline;
+	text-transform: lowercase;
+}
+
+.frame__links a:not(:last-child),
+.frame__demos a:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.frame__demos {
+	margin: 1rem 0;
+}
+
+.frame__demo--current,
+.frame__demo--current:hover {
+	color: var(--color-text);
+}
+
+/* Slideshow demo 1 */
+.slideshow {
+	display: grid;
+	width: 100%;
+	height: 100vh;
+	grid-template-columns: 90% 10%;
+	grid-template-rows: auto auto;
+}
+
+.slideshow__intro {
+	grid-area: 1 / 1 / 3 / 3;
+	align-self: center;
+	justify-self: center;
+	position: relative;
+}
+
+.slideshow__intro-title {
+	font-family: vortice-concept, sans-serif;
+    font-weight: 400;
+    font-size: 9vw;
+    line-height: 0.5;
+    margin: 5vw 0 0 0;
+    -webkit-text-stroke: 2px var(--color-primary);
+	text-stroke: 2px var(--color-primary);
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	color: transparent;
+}
+
+.slideshow__intro-subline {
+	text-align: center;
+	width: 100%;
+	display: block;
+	color: var(--color-primary);
+	font-size: 1.25rem;
+}
+
+.slideshow__intro-description {
+	margin: 2rem 0 0 1rem;
+	max-width: 300px;
+}
+
+.slideshow__img-wrap {
+	position: relative;
+	grid-area: 1 / 1 / 3 / 2;
+	justify-self: end;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+  overflow: hidden;
+  width: 47%;
+}
+
+
+.slideshow__img {
+	/* grid-area: 1 / 1 / 2 / 2;
+	max-height: 100%;
+  opacity: 0; */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;  
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideshow__img--current {
+	opacity: 1;
+}
+
+.slideshow__nav {
+	grid-area: 2 / 1 / 3 / 3;
+	display: flex;
+	align-self: end;
+	align-items: end;
+	justify-content: space-between;
+	padding: 2rem 3rem;
+	z-index: 100;
+}
+
+.slideshow__nav-item {
+	font-family: vortice-concept, sans-serif;
+    font-weight: 400;
+    color: var(--color-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Grid demo 2 */
+
+.content {
+	display: grid;
+	--column-gap: 2rem;
+	--row-gap: 10vh;
+	--mwidth: 400px;
+	--columns: 3;
+	max-width: calc(var(--mwidth) * var(--columns) + (var(--columns) - 1) * var(--column-gap));
+	width: 100%;
+	margin: 0 auto;
+	grid-template-columns: repeat(auto-fill,minmax(calc(var(--mwidth)/2), var(--mwidth)));
+	grid-column-gap: var(--column-gap);
+	grid-row-gap: var(--row-gap);
+	justify-content: center;
+	padding: 4rem 0 20rem;
+}
+
+.item {
+	margin: 0;
+	padding: 2rem;
+	align-self: end;
+	display: grid;
+	grid-template-areas:
+		"... ... ..."
+		"pretitle pretitle pretitle"
+		"title title tile"
+		"... counter counter"
+		"... description ...";
+		grid-template-columns: 10% 1fr 1rem;
+		grid-template-rows: 3rem auto 1fr 2rem auto;
+}
+
+.item__fig {
+  position: relative;
+  max-width: 100%;
+  grid-area: 1 / 2 / 4 / 3;
+  margin: 0;
+}
+
+.aspect {
+  padding-top: var(--aspect);
+}
+
+.item__img {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.item__pretitle {
+	font-family: vortice-concept, sans-serif;
+	font-weight: 400;
+	color: var(--color-secondary);
+	font-size: 1rem;
+	margin: 0 0 0.75rem;
+	grid-area: pretitle;
+	display: flex;
+	pointer-events: none;
+}
+
+.item__title {
+	font-family: vortice-concept, sans-serif;
+	font-weight: 400;
+	margin: 0;
+	-webkit-text-stroke: 1px var(--color-primary);
+	text-stroke: 1px var(--color-primary);
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	color: transparent;
+	font-size: 2.5rem;
+	grid-area: title;
+	pointer-events: none;
+}
+
+.item__counter {
+	font-family: vortice-concept, sans-serif;
+	font-weight: 400;
+	color: var(--color-primary);
+	font-size: 3rem;
+	grid-area: counter;
+	align-self: end;
+	justify-self: end;
+	line-height: 1;
+	pointer-events: none;
+}
+
+.item__description {
+	max-width: 200px;
+	grid-area: description;
+	font-size: 0.85rem;
+	color: var(--color-description);
+}
+
+@media screen and (min-width: 53em) {
+	.message {
+		display: none;
+	}
+	.frame {
+		position: fixed;
+		text-align: left;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		display: grid;
+		align-content: space-between;
+		width: 100%;
+		max-width: none;
+		height: 100vh;
+		padding: 3rem;
+		pointer-events: none;
+		grid-template-columns: 75% 25%;
+		grid-template-rows: auto auto auto;
+		grid-template-areas: 'title demos'
+							'... ...'
+							'... ...';
+	}
+	.frame__title-wrap {
+		grid-area: title;
+	}
+	.frame__title {
+		margin: 0;
+	}
+	.frame__tagline {
+		position: relative;
+		margin: 0 0 0 1rem;
+		padding: 0 0 0 1rem;
+		opacity: 0.5;
+	}
+	.frame__demos {
+		margin: 0;
+		grid-area: demos;
+		justify-self: end;
+	}
+	.frame__links {
+		grid-area: links;
+		padding: 0;
+		justify-self: end;
+	}
+	.frame a {
+		pointer-events: auto;
+	}
+	.content {
+		margin-top: 13rem;
+	}
+}
+
+/* Canvas */
+.dom-gl {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
