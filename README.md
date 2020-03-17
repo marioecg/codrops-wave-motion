@@ -1,12 +1,12 @@
-# Create a Wave Motion Effect on an Image with Three.js
+# Wave Motion Effect with Three.js
 
 *Learn how to make a wave motion effect on an image with Three.js.*
 
-![](img/thumbnail.jpg)
+![Wave motion effect](https://tympanus.net/codrops/wp-content/uploads/2020/03/WaveMotion_featured.jpg)
 
-[Article on Codrops](https://tympanus.net/codrops/?p=)
+[Article on Codrops](https://tympanus.net/codrops/?p=48418)
 
-[Demo](http://tympanus.net/Development/.../)
+[Demo](http://tympanus.net/Tutorials/WaveMotionEffect/)
 
 ## Installation
 Run this command in the terminal
@@ -31,8 +31,6 @@ npm run watch
 - [The Book of Shaders](https://www.npmjs.com/package/glsl-noise)
 - [GLSL Noise](https://www.npmjs.com/package/glsl-noise)
 
-## License
-This resource can be used freely if integrated or build upon in personal or commercial projects such as websites, web apps and web templates intended for sale. It is not allowed to take the resource "as-is" and sell it, redistribute, re-publish it, or sell "pluginized" versions of it. Free plugins built using this resource should have a visible mention and link to the original work. Always consider the licenses of all included libraries, scripts and images used.
 
 ## Misc
 
@@ -40,8 +38,10 @@ Follow *@marioecg*: [Twitter](https://twitter.com/marioecg), [Instagram](https:/
 
 Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/)
 
+## License
+[MIT](LICENSE)
 
-[© Codrops 2019](http://www.codrops.com)
+Made with :blue_heart: by [Codrops](http://www.codrops.com)
 
 
 
