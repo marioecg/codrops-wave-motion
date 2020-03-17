@@ -3,11 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: './js/app.js',
+  entry: {
+    'index': './js/index.js',
+    'index2': './js/index2.js'
+  },  
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'scripts/[name].js'
   },
 
   module: {
@@ -68,23 +71,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
+      inject: true,
+      chunks: ['index'],
       hash: true,
-      minify: {
-        // collapseWhitespace: true
-      }
     }),
 
     new HtmlWebpackPlugin({
       filename: 'index2.html',
       template: 'index2.html',
+      inject: true,
+      chunks: ['index2'],
       hash: true,
-      minify: {
-        // collapseWhitespace: true
-      }
     }),
 
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "styles/[name].css",
       chunkFilename: "[id].css"
     }),
   ]
