@@ -1,2 +1,2 @@
-export { preload } from './preload';
+export { preloadImages } from './preload';
 export { lerp } from './lerp';

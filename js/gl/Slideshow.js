@@ -32,8 +32,11 @@ export default class extends GlObject {
     this.textures = [];
 
     this.state = {
-      animating: false
+      animating: false,
+      current: 0
     };
+
+    this.navItems = document.querySelectorAll('.slideshow__nav-item');
 
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.add(this.mesh);
@@ -68,6 +71,10 @@ export default class extends GlObject {
 
     this.state.animating = true;
 
+    this.navItems[this.state.current].classList.remove('slideshow__nav-item--current');
+    this.navItems[index].classList.add('slideshow__nav-item--current');
+    this.state.current = index;
+
     this.material.uniforms.uNextTex.value = this.textures[index];
 
     const tl = gsap.timeline({
@@ -88,9 +95,7 @@ export default class extends GlObject {
   }
 
   addEvents() {
-    const elems = document.querySelectorAll('.slideshow__nav-item');
-
-    elems.forEach((el, i) => {
+    this.navItems.forEach((el, i) => {
       el.addEventListener('click', () => {
         this.switchTextures(i);
       });

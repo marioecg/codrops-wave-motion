@@ -1,62 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shader Hover Transition Effects | Demo 2 | Codrops</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>Wave Motion Effect | Demo 2 | Codrops</title>
+    <meta name="description" content="Wave motion effects on images with Three.js using simplex noise." />
+    <meta name="keywords" content="three.js, wave, motion, distortion, simplex noise, slideshow, javascript" />
     <meta name="author" content="Codrops" />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="https://use.typekit.net/xjr3lgi.css" />
     <script>
-      document.documentElement.className = "js";
-      var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
-      supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    document.documentElement.className = "js";
+    var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+    supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
-    <!--script src="//tympanus.net/codrops/adpacks/analytics.js"></script-->
-  </head>
+</head>
 
-  <body class="demo-2">
+<body class="demo-2 loading">
     <main>
-      <div class="message">Some message for mobile (if needed).</div>
-      <div class="frame">
-        <div class="frame__title-wrap">
-          <h1 class="frame__title">Shader (Hover) Transition Effects</h1>
-          <div class="frame__links">
-            <a href="">Previous Demo</a>
-            <a href="">Article</a>
-            <a href="">GitHub</a>
-          </div>
+        <div class="frame">
+            <div class="frame__title-wrap">
+                <h1 class="frame__title">Wave Motion Effect</h1>
+                <div class="frame__links">
+                  <a href="https://tympanus.net/Development/BackgroundScaleHoverEffect/">Previous demo</a>
+                    <a href="https://tympanus.net/codrops/?p=48418">Article</a>
+                    <a href="https://github.com/marioecg/codrops-wave-motion">GitHub</a>
+                </div>
+            </div>
+            <div class="frame__demos">
+                <a href="index.html" class="frame__demo">demo 1</a>
+                <a href="index2.html" class="frame__demo frame__demo--current">demo 2</a>
+            </div>
         </div>
-        <div class="frame__demos">
-          <a href="/" class="frame__demo frame__demo--current">demo 1</a
-          >
-          <a href="index2.html" class="frame__demo">demo 2</a>
+        <div class="slideshow">
+            <div class="slideshow__img-wrap | js-slideshow">
+                <div class="aspect" style="--aspect: 133.33%"></div>
+                <img class="slideshow__img slideshow__img--current" src="img/slideshow-01.jpg" alt="Some image" />
+                <img class="slideshow__img" src="img/slideshow-02.jpg" alt="Some image" />
+                <img class="slideshow__img" src="img/slideshow-03.jpg" alt="Some image" />
+                <img class="slideshow__img" src="img/slideshow-04.jpg" alt="Some image" />
+            </div>
+            <div class="slideshow__intro">
+                <span class="slideshow__intro-subline">A new cyber movement</span>
+                <h2 class="slideshow__intro-title">Mechanism</h2>
+                <p class="slideshow__intro-description">“Your assumptions are your windows on the world. Scrub them off every once in a while, or the light won't come in.”</p>
+            </div>
+            <nav class="slideshow__nav">
+                <a class="slideshow__nav-item slideshow__nav-item--current">Seoul</a>
+                <a class="slideshow__nav-item">Bangkok</a>
+                <a class="slideshow__nav-item">Taipei</a>
+                <a class="slideshow__nav-item">Tokyo</a>
+            </nav>
         </div>
-      </div>
-      <div class="slideshow">
-        <div class="slideshow__img-wrap | js-slideshow">
-          <div class="aspect" style="--aspect: 133.33%"></div>
-
-          <img class="slideshow__img slideshow__img--current" src="img/slideshow-01.jpg" alt="Some image" />
-          <img class="slideshow__img" src="img/slideshow-05.jpg" alt="Some image" />
-          <img class="slideshow__img" src="img/slideshow-03.jpg" alt="Some image" />
-          <img class="slideshow__img" src="img/slideshow-04.jpg" alt="Some image" />
-        </div>
-        <div class="slideshow__intro">
-          <span class="slideshow__intro-subline">A new cyber movement</span>
-          <h2 class="slideshow__intro-title">Mechanism</h2>
-          <p class="slideshow__intro-description">“Your assumptions are your windows on the world. Scrub them off every once in a while, or the light won't come in.”</p>
-        </div>
-        <nav class="slideshow__nav">
-          <a class="slideshow__nav-item">Seoul</a>
-          <a class="slideshow__nav-item">Bangkok</a>
-          <a class="slideshow__nav-item">Taipei</a>
-          <a class="slideshow__nav-item">Tokyo</a>
-        </nav>
-      </div>
     </main>
-    <!--script src="https://tympanus.net/codrops/adpacks/demoad.js"></script-->
-  </body>
+</body>
+
 </html>

@@ -3,15 +3,17 @@ import Smooth from './components/Smooth';
 import Gl from './gl';
 import Plane from './gl/Plane';
 import Slideshow from './gl/Slideshow';
-import { preload } from './utils';
+import { preloadImages } from './utils';
 
-preload().then(() => {
-  if(window.location.pathname === '/') {
+preloadImages().then(() => {
+  document.body.classList.remove('loading');
+
+  if(window.location.pathname.includes('index2')) {
+  	const element = document.querySelector('.js-slideshow');
+    const slideshow = new Slideshow().init(element);
+  } else {
     const elements = document.querySelectorAll('.js-plane');
     elements.forEach((el, index) => new Plane().init(el, index));
     const smooth = new Smooth();
-  } else {
-    const element = document.querySelector('.js-slideshow');
-    const slideshow = new Slideshow().init(element);
   }
 });
